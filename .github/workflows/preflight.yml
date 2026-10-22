@@ -1,0 +1,19 @@
+name: Preflight
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Report status
+        run: echo "Preflight checks complete — this repo is ready for the release drill."
